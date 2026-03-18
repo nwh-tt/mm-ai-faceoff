@@ -1,0 +1,97 @@
+{
+  "year": 2026,
+  "regions": {
+    "east": {
+      "name": "East",
+      "color": "#4e7aaa",
+      "teams": [
+        { "seed": 1, "team": "Duke", "record": "32-2" },
+        { "seed": 16, "team": "Siena", "record": "22-12" },
+        { "seed": 8, "team": "Ohio State", "record": "20-13" },
+        { "seed": 9, "team": "TCU", "record": "21-12" },
+        { "seed": 5, "team": "St. John's", "record": "25-8" },
+        { "seed": 12, "team": "UNI", "record": "27-7" },
+        { "seed": 4, "team": "Kansas", "record": "22-11" },
+        { "seed": 13, "team": "Cal Baptist", "record": "24-9" },
+        { "seed": 6, "team": "Louisville", "record": "23-10" },
+        { "seed": 11, "team": "South Florida", "record": "25-8" },
+        { "seed": 3, "team": "Michigan St.", "record": "30-3" },
+        { "seed": 14, "team": "N. Dakota St.", "record": "24-10" },
+        { "seed": 7, "team": "UCLA", "record": "22-11" },
+        { "seed": 10, "team": "UCF", "record": "23-10" },
+        { "seed": 2, "team": "UConn", "record": "27-6" },
+        { "seed": 15, "team": "Furman", "record": "25-9" }
+      ]
+    },
+    "south": {
+      "name": "South",
+      "color": "#a85252",
+      "teams": [
+        { "seed": 1, "team": "Florida", "record": "26-7" },
+        { "seed": 16, "team": "PV A&M/Lehigh", "record": "TBD" },
+        { "seed": 8, "team": "Clemson", "record": "21-12" },
+        { "seed": 9, "team": "Iowa", "record": "22-11" },
+        { "seed": 5, "team": "Vanderbilt", "record": "24-9" },
+        { "seed": 12, "team": "McNeese", "record": "28-5" },
+        { "seed": 4, "team": "Nebraska", "record": "24-9" },
+        { "seed": 13, "team": "Troy", "record": "26-8" },
+        { "seed": 6, "team": "North Carolina", "record": "21-12" },
+        { "seed": 11, "team": "VCU", "record": "27-7" },
+        { "seed": 3, "team": "Illinois", "record": "23-10" },
+        { "seed": 14, "team": "Penn", "record": "22-8" },
+        { "seed": 7, "team": "Saint Mary's", "record": "26-7" },
+        { "seed": 10, "team": "Texas A&M", "record": "22-12" },
+        { "seed": 2, "team": "Houston", "record": "28-5" },
+        { "seed": 15, "team": "Idaho", "record": "24-10" }
+      ]
+    },
+    "west": {
+      "name": "West",
+      "color": "#4a8c62",
+      "teams": [
+        { "seed": 1, "team": "Arizona", "record": "30-2" },
+        { "seed": 16, "team": "LIU", "record": "20-14" },
+        { "seed": 8, "team": "Villanova", "record": "24-8" },
+        { "seed": 9, "team": "Utah State", "record": "28-6" },
+        { "seed": 5, "team": "Wisconsin", "record": "23-10" },
+        { "seed": 12, "team": "High Point", "record": "28-5" },
+        { "seed": 4, "team": "Arkansas", "record": "24-9" },
+        { "seed": 13, "team": "Hawai'i", "record": "22-11" },
+        { "seed": 6, "team": "BYU", "record": "23-10" },
+        { "seed": 11, "team": "Texas", "record": "20-13" },
+        { "seed": 3, "team": "Gonzaga", "record": "30-4" },
+        { "seed": 14, "team": "Kennesaw St.", "record": "25-9" },
+        { "seed": 7, "team": "Miami (FL)", "record": "21-12" },
+        { "seed": 10, "team": "Missouri", "record": "21-12" },
+        { "seed": 2, "team": "Purdue", "record": "27-7" },
+        { "seed": 15, "team": "Queens", "record": "26-7" }
+      ]
+    },
+    "midwest": {
+      "name": "Midwest",
+      "color": "#7a5aa8",
+      "teams": [
+        { "seed": 1, "team": "Michigan", "record": "29-4" },
+        { "seed": 16, "team": "Howard", "record": "17-16" },
+        { "seed": 8, "team": "Georgia", "record": "20-13" },
+        { "seed": 9, "team": "Saint Louis", "record": "24-9" },
+        { "seed": 5, "team": "Texas Tech", "record": "23-10" },
+        { "seed": 12, "team": "Akron", "record": "26-8" },
+        { "seed": 4, "team": "Alabama", "record": "22-11" },
+        { "seed": 13, "team": "Hofstra", "record": "27-7" },
+        { "seed": 6, "team": "Tennessee", "record": "22-11" },
+        { "seed": 11, "team": "SMU/Miami OH", "record": "TBD" },
+        { "seed": 3, "team": "Virginia", "record": "24-9" },
+        { "seed": 14, "team": "Wright State", "record": "18-11" },
+        { "seed": 7, "team": "Kentucky", "record": "20-13" },
+        { "seed": 10, "team": "Santa Clara", "record": "25-8" },
+        { "seed": 2, "team": "Iowa State", "record": "27-6" },
+        { "seed": 15, "team": "Tenn. State", "record": "23-10" }
+      ]
+    }
+  },
+  "finalFour": {
+    "semifinal1": { "regions": ["east", "south"] },
+    "semifinal2": { "regions": ["west", "midwest"] }
+  }
+}

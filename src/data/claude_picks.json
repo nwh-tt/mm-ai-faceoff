@@ -1,0 +1,33 @@
+{
+  "name": "Claude",
+  "avatar": "🤖",
+  "east": {
+    "r32": ["Duke", "Ohio State", "St. John's", "Kansas", "South Florida", "Michigan St.", "UCF", "UConn"],
+    "s16": ["Duke", "Kansas", "Michigan St.", "UConn"],
+    "e8": ["Duke", "UConn"],
+    "ff": "Duke"
+  },
+  "south": {
+    "r32": ["Florida", "Iowa", "Vanderbilt", "Nebraska", "VCU", "Illinois", "Texas A&M", "Houston"],
+    "s16": ["Florida", "Nebraska", "Illinois", "Houston"],
+    "e8": ["Florida", "Houston"],
+    "ff": "Houston"
+  },
+  "west": {
+    "r32": ["Arizona", "Utah State", "High Point", "Arkansas", "BYU", "Gonzaga", "Missouri", "Purdue"],
+    "s16": ["Arizona", "Arkansas", "Gonzaga", "Purdue"],
+    "e8": ["Arizona", "Purdue"],
+    "ff": "Arizona"
+  },
+  "midwest": {
+    "r32": ["Michigan", "Saint Louis", "Akron", "Alabama", "Tennessee", "Virginia", "Santa Clara", "Iowa State"],
+    "s16": ["Michigan", "Alabama", "Virginia", "Iowa State"],
+    "e8": ["Michigan", "Iowa State"],
+    "ff": "Michigan"
+  },
+  "finalFour": {
+    "semifinal1": "Houston",
+    "semifinal2": "Arizona",
+    "champion": "Arizona"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "note": "Fill in actual results as games are played. null means not yet played.",
+  "east": {
+    "r32": [null, null, null, null, null, null, null, null],
+    "s16": [null, null, null, null],
+    "e8": [null, null],
+    "ff": null
+  },
+  "south": {
+    "r32": [null, null, null, null, null, null, null, null],
+    "s16": [null, null, null, null],
+    "e8": [null, null],
+    "ff": null
+  },
+  "west": {
+    "r32": [null, null, null, null, null, null, null, null],
+    "s16": [null, null, null, null],
+    "e8": [null, null],
+    "ff": null
+  },
+  "midwest": {
+    "r32": [null, null, null, null, null, null, null, null],
+    "s16": [null, null, null, null],
+    "e8": [null, null],
+    "ff": null
+  },
+  "finalFour": {
+    "semifinal1": null,
+    "semifinal2": null,
+    "champion": null
+  }
+}
