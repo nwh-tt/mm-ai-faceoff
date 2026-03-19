@@ -16,8 +16,34 @@ import FinalFour from './FinalFour'
 export default function Bracket({ bracketData, picks, actual }) {
   const { regions } = bracketData
 
+  const colWidth = 155
+  const colGap = 4   // gap-1
+  const secGap = 8   // gap-2
+  const ffWidth = 280
+  const labelStyle = { width: colWidth, fontSize: 11 }
+
   return (
     <div className="overflow-x-auto scrollbar-thin pb-4">
+      {/* Single round-label header */}
+      <div className="flex items-center min-w-max justify-center mb-2" style={{ gap: secGap }}>
+        {/* Left labels: R64 → E8 */}
+        <div className="flex" style={{ gap: colGap }}>
+          {['R64', 'R32', 'S16', 'E8'].map(l => (
+            <div key={l} className="font-condensed font-bold tracking-widest uppercase text-center text-slate-600"
+                 style={labelStyle}>{l}</div>
+          ))}
+        </div>
+        {/* Center spacer */}
+        <div style={{ width: ffWidth }} />
+        {/* Right labels: E8 → R64 */}
+        <div className="flex" style={{ gap: colGap }}>
+          {['E8', 'S16', 'R32', 'R64'].map(l => (
+            <div key={l} className="font-condensed font-bold tracking-widest uppercase text-center text-slate-600"
+                 style={labelStyle}>{l}</div>
+          ))}
+        </div>
+      </div>
+
       <div className="flex gap-2 min-w-max justify-center">
 
         {/* LEFT SIDE: East (top) + South (bottom) */}

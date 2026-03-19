@@ -36,20 +36,16 @@ export default function FinalFour({ bracketData, picks, actual }) {
   const midwestColor = regions.midwest.color
 
   return (
-    <div className="flex flex-col items-center gap-3" style={{ width: 200 }}>
+    <div className="flex flex-col items-center gap-4" style={{ width: 280 }}>
       {/* Header */}
       <div className="text-center">
         <div
-          className="font-condensed font-black text-sm tracking-widest uppercase"
-          style={{
-            background: 'linear-gradient(135deg, #f59e0b, #ef4444, #a855f7, #3b82f6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
+          className="font-condensed font-black text-xl tracking-widest uppercase"
+          style={{ color: '#e2e8f0' }}
         >
           Final Four
         </div>
-        <div className="font-condensed text-[10px] text-slate-600 uppercase tracking-wider mt-0.5">
+        <div className="font-condensed text-xs text-slate-600 uppercase tracking-wider mt-0.5">
           Indianapolis
         </div>
       </div>
@@ -68,7 +64,7 @@ export default function FinalFour({ bracketData, picks, actual }) {
         className="w-full rounded-lg overflow-hidden"
         style={{ border: '1px solid rgba(245,158,11,0.4)', background: 'rgba(245,158,11,0.05)' }}
       >
-        <div className="font-condensed text-[10px] font-bold tracking-widest uppercase text-center py-1"
+        <div className="font-condensed text-xs font-bold tracking-widest uppercase text-center py-1.5"
              style={{ color: '#f59e0b', borderBottom: '1px solid rgba(245,158,11,0.2)' }}>
           Championship · Apr 6
         </div>
@@ -93,7 +89,7 @@ export default function FinalFour({ bracketData, picks, actual }) {
         />
         {/* Champion banner */}
         <div
-          className="font-condensed font-black text-center py-2 text-sm uppercase tracking-widest"
+          className="font-condensed font-black text-center py-3 text-base uppercase tracking-widest"
           style={{
             borderTop: '1px solid rgba(245,158,11,0.2)',
             color: champActual ? (champActual === champion ? '#fcd34d' : '#f87171') : '#f59e0b',
@@ -132,7 +128,7 @@ function SemifinalCard({ label, topTeam, topSeed, topColor, topRegion, botTeam, 
   return (
     <div className="w-full rounded-lg overflow-hidden"
          style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-      <div className="font-condensed text-[10px] font-bold tracking-widest uppercase text-center py-1"
+      <div className="font-condensed text-xs font-bold tracking-widest uppercase text-center py-1.5"
            style={{ color: '#475569', borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.3)' }}>
         {label} · Apr 4
       </div>
@@ -142,7 +138,7 @@ function SemifinalCard({ label, topTeam, topSeed, topColor, topRegion, botTeam, 
       <FFSlotRow seed={botSeed} team={botTeam} status={getStatus(botTeam)} color={botColor}
                  isPicked={pickedWinner === botTeam} region={botRegion} />
       {pickedWinner && (
-        <div className="font-condensed text-[10px] text-center py-1 uppercase tracking-wider"
+        <div className="font-condensed text-xs text-center py-1.5 uppercase tracking-wider"
              style={{
                borderTop: '1px solid rgba(255,255,255,0.06)',
                color: actualWinner === null ? '#64748b' : actualWinner === pickedWinner ? '#86efac' : '#fca5a5',
@@ -174,16 +170,16 @@ function FFSlotRow({ seed, team, status, color, isPicked, region }) {
 
   return (
     <div className="flex items-center gap-1.5 px-2 py-1.5" style={{ background: bg }}>
-      <span className="font-condensed font-bold shrink-0" style={{ fontSize: 10, color: color + '90', width: 14, textAlign: 'right' }}>
+      <span className="font-condensed font-bold shrink-0" style={{ fontSize: 12, color: color + '90', width: 16, textAlign: 'right' }}>
         {seed}
       </span>
       <span className="font-condensed uppercase tracking-wide flex-1 truncate"
-            style={{ fontSize: 11, color: textColor, fontWeight: isPicked ? 800 : 600 }}>
+            style={{ fontSize: 13, color: textColor, fontWeight: isPicked ? 800 : 600 }}>
         {team || 'TBD'}
       </span>
-      {region && <span className="font-condensed text-[9px] shrink-0" style={{ color: color + '70' }}>{region}</span>}
+      {region && <span className="font-condensed text-[10px] shrink-0" style={{ color: color + '70' }}>{region}</span>}
       {status !== 'neutral' && (
-        <span className="shrink-0 rounded-full" style={{ width: 5, height: 5, background: dot }} />
+        <span className="shrink-0 rounded-full" style={{ width: 6, height: 6, background: dot }} />
       )}
     </div>
   )
