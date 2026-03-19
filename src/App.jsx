@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Bracket from "./components/Bracket";
+import Summary from "./components/Summary";
 import bracketData from "./data/bracket.json";
 import claudePicks from "./data/claude_picks.json";
 import gptPicks from "./data/gpt_picks.json";
@@ -49,6 +50,7 @@ function scorePicksVsActual(picks, actual) {
 
 export default function App() {
   const [activePicker, setActivePicker] = useState("claude");
+  const [activePage, setActivePage] = useState("bracket");
 
   const pickers = {
     claude: {
@@ -127,9 +129,9 @@ export default function App() {
           borderBottom: "1px solid rgba(255,255,255,0.05)",
         }}
       >
-        {/* Left — picker */}
-        <div className="shrink-0" style={{ minWidth: 160 }}>
-          {Object.keys(pickers).length > 1 && (
+        {/* Left — picker (hidden on summary page) */}
+        <div className="shrink-0" style={{ width: 160 }}>
+          {Object.keys(pickers).length > 1 && activePage === 'bracket' && (
             <div className="flex items-end" style={{ gap: 2 }}>
               {Object.entries(pickers).map(([key, p]) => {
                 const isActive = activePicker === key
@@ -209,85 +211,81 @@ export default function App() {
             >
               NCAA Tournament · Bracket Predictions
             </span>
-            {hasResults && (
+            {hasResults && activePage === 'bracket' && (
               <>
-                <span className="text-slate-700" style={{ fontSize: 10 }}>
-                  ·
-                </span>
-                <span
-                  className="font-condensed font-black text-green-400"
-                  style={{ fontSize: 12 }}
-                >
-                  {score.correct}
-                </span>
-                <span
-                  className="font-condensed text-slate-600"
-                  style={{ fontSize: 10 }}
-                >
-                  correct · {score.total} played ·{" "}
-                  {score.possible - score.total} remaining
+                <span className="text-slate-700" style={{ fontSize: 10 }}>·</span>
+                <span className="font-condensed font-black text-green-400" style={{ fontSize: 12 }}>{score.correct}</span>
+                <span className="font-condensed text-slate-600" style={{ fontSize: 10 }}>
+                  correct · {score.total} played · {score.possible - score.total} remaining
                 </span>
               </>
             )}
           </div>
         </div>
 
-        {/* Right — legend */}
+        {/* Right — nav + legend */}
         <div
-          className="shrink-0 flex gap-3"
-          style={{ minWidth: 160, justifyContent: "flex-end" }}
+          className="shrink-0 flex items-center gap-4"
+          style={{ width: 160, justifyContent: "flex-end" }}
         >
-          {[
-            { dot: "#22c55e", label: "Correct" },
-            { dot: "#ef4444", label: "Wrong" },
-            { dot: "#475569", label: "Pending" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-1.5">
-              <span
-                className="rounded-full shrink-0"
-                style={{ width: 6, height: 6, background: item.dot }}
-              />
-              <span
-                className="font-condensed uppercase text-slate-600"
-                style={{ fontSize: 9, letterSpacing: "0.1em" }}
-              >
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="relative z-10 px-4 py-8">
-        {/* ── Bracket ── */}
-        <div
-          className="rounded-2xl"
-          style={{
-            border: "1px solid rgba(255,255,255,0.05)",
-            background: "rgba(15,11,7,0.7)",
-            backdropFilter: "blur(12px)",
-          }}
-        >
-          <div className="p-4 md:p-6">
-            <Bracket
-              bracketData={bracketData}
-              picks={activePicks}
-              actual={actualResults}
-            />
+          {/* Page nav */}
+          <div style={{ display: 'flex', gap: 2, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 6, padding: 2 }}>
+            {[{ key: 'bracket', label: 'Bracket' }, { key: 'summary', label: 'Summary' }].map(({ key, label }) => (
+              <button
+                key={key}
+                onClick={() => setActivePage(key)}
+                style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontWeight: 700, fontSize: 11,
+                  letterSpacing: '0.1em', textTransform: 'uppercase',
+                  padding: '3px 10px', borderRadius: 4, border: 'none',
+                  cursor: 'pointer', transition: 'all 0.15s',
+                  background: activePage === key ? 'rgba(255,255,255,0.08)' : 'transparent',
+                  color: activePage === key ? '#e2e8f0' : '#475569',
+                }}
+              >{label}</button>
+            ))}
           </div>
-        </div>
 
-        {/* ── Footer ── */}
-        <footer className="text-center mt-8">
-          <p
-            className="font-condensed text-slate-700 uppercase tracking-widest"
-            style={{ fontSize: 10 }}
-          >
-            Predictions by {activePicks?.name} · March 18, 2026 · Based on
-            KenPom, injury reports & betting odds
-          </p>
-        </footer>
+        </div>
       </div>
+
+      {activePage === 'bracket' ? (
+        <div className="relative z-10 px-4 py-8">
+          {/* ── Bracket ── */}
+          <div
+            className="rounded-2xl"
+            style={{
+              border: "1px solid rgba(255,255,255,0.05)",
+              background: "rgba(15,11,7,0.7)",
+              backdropFilter: "blur(12px)",
+            }}
+          >
+            <div className="p-4 md:p-6">
+              <Bracket
+                bracketData={bracketData}
+                picks={activePicks}
+                actual={actualResults}
+              />
+            </div>
+          </div>
+
+          {/* ── Footer ── */}
+          <footer className="text-center mt-8">
+            <p
+              className="font-condensed text-slate-700 uppercase tracking-widest"
+              style={{ fontSize: 10 }}
+            >
+              Predictions by {activePicks?.name} · March 18, 2026 · Based on
+              KenPom, injury reports & betting odds
+            </p>
+          </footer>
+        </div>
+      ) : (
+        <div className="relative z-10">
+          <Summary bracketData={bracketData} pickers={pickers} actual={actualResults} />
+        </div>
+      )}
     </div>
   );
 }
