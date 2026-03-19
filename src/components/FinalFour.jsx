@@ -56,8 +56,8 @@ export default function FinalFour({ bracketData, picks, actual }) {
       />
 
       {/* Championship */}
-      <div className="w-full rounded-lg overflow-hidden border border-yellow-500/40 bg-yellow-500/5">
-        <div className="font-condensed text-xs font-bold tracking-widest uppercase text-center py-1.5 text-yellow-500 border-b border-yellow-500/20">
+      <div className="rounded-xl overflow-hidden" style={{ width: 'calc(100% + 40px)', border: '1px solid rgba(245,158,11,0.5)', background: 'rgba(245,158,11,0.04)', boxShadow: '0 0 24px rgba(245,158,11,0.08)' }}>
+        <div className="font-condensed font-bold tracking-widest uppercase text-center text-yellow-500 border-b border-yellow-500/20" style={{ fontSize: 11, padding: '8px 0' }}>
           Championship · Apr 6
         </div>
         <FFSlotRow
@@ -77,6 +77,7 @@ export default function FinalFour({ bracketData, picks, actual }) {
           }
           color="#f59e0b"
           isPicked={champion === sf1winner}
+          large
         />
         <div className="h-px bg-yellow-500/20" />
         <FFSlotRow
@@ -96,13 +97,15 @@ export default function FinalFour({ bracketData, picks, actual }) {
           }
           color="#f59e0b"
           isPicked={champion === sf2winner}
+          large
         />
         {/* Champion banner */}
         <div
-          className={`font-condensed font-black text-center py-3 text-base uppercase tracking-widest border-t border-yellow-500/20 bg-black/20 ${champColor}`}
+          className={`font-condensed font-black text-center uppercase tracking-widest border-t border-yellow-500/20 bg-black/20 ${champColor}`}
+          style={{ fontSize: 18, padding: '14px 0' }}
         >
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-            <Trophy size={14} color="#f59e0b" strokeWidth={1.75} />
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+            <Trophy size={18} color="#f59e0b" strokeWidth={1.75} />
             {champActual
               ? champActual === champion ? champion : champActual
               : champion}
@@ -171,18 +174,11 @@ function SemifinalCard({
         color={botColor}
         isPicked={pickedWinner === botTeam}
       />
-      {pickedWinner && (
-        <div
-          className={`font-condensed text-xs text-center py-3 uppercase tracking-wider border-t border-white/[0.06] bg-black/20 ${winnerTextClass}`}
-        >
-          → {actualWinner || pickedWinner}
-        </div>
-      )}
     </div>
   );
 }
 
-function FFSlotRow({ seed, team, status, color, isPicked }) {
+function FFSlotRow({ seed, team, status, color, isPicked, large = false }) {
   const bgClass = {
     correct: "bg-green-500/10",
     wrong: "bg-red-500/[0.08]",
@@ -205,15 +201,16 @@ function FFSlotRow({ seed, team, status, color, isPicked }) {
   }[status];
 
   return (
-    <div className={`flex items-center gap-1.5 px-2 ${bgClass}`}>
+    <div className={`flex items-center gap-1.5 ${bgClass}`} style={{ padding: large ? '10px 10px' : '9px 8px' }}>
       <span
-        className="font-condensed font-bold text-xs w-4 shrink-0 text-right"
-        style={{ color: color + "90" }}
+        className="font-condensed font-bold shrink-0 text-right"
+        style={{ color: color + "90", fontSize: large ? 13 : 12, width: large ? 18 : 16 }}
       >
         {seed}
       </span>
       <span
-        className={`font-condensed text-[13px] uppercase tracking-wide flex-1 truncate font-semibold ${textClass}`}
+        className={`font-condensed uppercase tracking-wide flex-1 truncate font-semibold ${textClass}`}
+        style={{ fontSize: large ? 15 : 13 }}
       >
         {team || "TBD"}
       </span>
