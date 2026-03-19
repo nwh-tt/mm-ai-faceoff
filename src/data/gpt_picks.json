@@ -1,0 +1,33 @@
+{
+  "name": "ChatGPT",
+  "avatar": "🧠",
+  "east": {
+    "r32": ["Duke", "Ohio State", "St. John's", "Kansas", "Louisville", "Michigan St.", "UCLA", "UConn"],
+    "s16": ["Duke", "St. John's", "Michigan St.", "UConn"],
+    "e8": ["Duke", "UConn"],
+    "ff": "Duke"
+  },
+  "south": {
+    "r32": ["Florida", "Clemson", "McNeese", "Nebraska", "VCU", "Illinois", "Texas A&M", "Houston"],
+    "s16": ["Florida", "Nebraska", "Illinois", "Houston"],
+    "e8": ["Florida", "Houston"],
+    "ff": "Houston"
+  },
+  "west": {
+    "r32": ["Arizona", "Villanova", "High Point", "Arkansas", "Texas", "Gonzaga", "Missouri", "Purdue"],
+    "s16": ["Arizona", "Arkansas", "Texas", "Purdue"],
+    "e8": ["Arizona", "Purdue"],
+    "ff": "Arizona"
+  },
+  "midwest": {
+    "r32": ["Michigan", "Georgia", "Texas Tech", "Alabama", "Tennessee", "Virginia", "Kentucky", "Iowa State"],
+    "s16": ["Michigan", "Alabama", "Tennessee", "Iowa State"],
+    "e8": ["Michigan", "Tennessee"],
+    "ff": "Tennessee"
+  },
+  "finalFour": {
+    "semifinal1": "Duke",
+    "semifinal2": "Tennessee",
+    "champion": "Duke"
+  }
+}

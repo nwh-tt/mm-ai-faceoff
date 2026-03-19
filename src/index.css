@@ -5,7 +5,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: #080c12;
+  background: #0a0805;
   color: #e2e8f0;
   font-family: 'Barlow', sans-serif;
   min-height: 100vh;
@@ -21,5 +21,5 @@ body {
 }
 
 .scrollbar-thin::-webkit-scrollbar { height: 4px; }
-.scrollbar-thin::-webkit-scrollbar-track { background: #0d1420; }
-.scrollbar-thin::-webkit-scrollbar-thumb { background: #1e2d45; border-radius: 2px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: #131008; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #2e2518; border-radius: 2px; }
