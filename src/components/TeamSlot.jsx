@@ -7,6 +7,8 @@
  *   pending  = game not yet played (gray)
  *   neutral  = first-round team, no pick comparison needed
  */
+import { Trophy } from 'lucide-react'
+
 export default function TeamSlot({ seed, team, status = 'neutral', isWinner = false, regionColor }) {
   const statusStyles = {
     correct: 'border-green-500/60 bg-green-500/10 text-green-300',
@@ -54,7 +56,7 @@ export default function TeamSlot({ seed, team, status = 'neutral', isWinner = fa
 
       {/* Trophy for champion */}
       {isWinner && status === 'correct' && (
-        <span className="ml-auto text-yellow-400 text-xs">🏆</span>
+        <Trophy size={11} color="#facc15" strokeWidth={1.75} className="ml-auto shrink-0" />
       )}
     </div>
   )

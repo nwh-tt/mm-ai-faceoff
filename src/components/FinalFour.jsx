@@ -1,3 +1,5 @@
+import { Trophy } from 'lucide-react'
+
 export default function FinalFour({ bracketData, picks, actual }) {
   const ff = picks?.finalFour || {};
   const ffActual = actual?.finalFour || {};
@@ -99,11 +101,12 @@ export default function FinalFour({ bracketData, picks, actual }) {
         <div
           className={`font-condensed font-black text-center py-3 text-base uppercase tracking-widest border-t border-yellow-500/20 bg-black/20 ${champColor}`}
         >
-          {champActual
-            ? champActual === champion
-              ? `🏆 ${champion}`
-              : `🏆 ${champActual}`
-            : `🏆 ${champion}`}
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <Trophy size={14} color="#f59e0b" strokeWidth={1.75} />
+            {champActual
+              ? champActual === champion ? champion : champActual
+              : champion}
+          </span>
         </div>
       </div>
 

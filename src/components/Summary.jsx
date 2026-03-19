@@ -223,8 +223,8 @@ function LeaderCard({ picker, rank }) {
     }}>
       {/* Ghost rank */}
       <div className="font-condensed" style={{
-        position: 'absolute', bottom: -8, right: 12,
-        fontWeight: 900, fontSize: 80, lineHeight: 1,
+        position: 'absolute', top: -8, right: 12,
+        fontWeight: 900, fontSize: 100, lineHeight: 1,
         color: rank === 1 ? `${color}12` : 'rgba(255,255,255,0.03)',
         userSelect: 'none', pointerEvents: 'none',
       }}>#{rank}</div>
